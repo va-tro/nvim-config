@@ -5,7 +5,7 @@ vim.g.maplocalleader = "\\"
 -- Basic options
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.mouse = "a"
+vim.opt.mouse = ""
 vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
@@ -37,7 +37,21 @@ vim.opt.sidescrolloff = 8
 -- UI
 vim.opt.termguicolors = true
 vim.opt.wrap = false
+vim.g.have_nerd_font = true
 
 -- Undo
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
+
+-- Whitespace
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 20
+
+-- Mandatory: Disable arrow keys in normal mode
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
