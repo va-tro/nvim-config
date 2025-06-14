@@ -17,7 +17,6 @@ vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua diagnostics_workspace<cr>", { des
 local harpoon = require("harpoon")
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
 -- Navigate between marked files
 vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
@@ -30,7 +29,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local map = function(keys, func, desc)
             vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
-
         map("gd", vim.lsp.buf.definition, "Goto Definition")
         map("gr", vim.lsp.buf.references, "Goto References")
         map("gI", vim.lsp.buf.implementation, "Goto Implementation")
@@ -40,3 +38,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("K", vim.lsp.buf.hover, "Hover Documentation")
     end,
 })
+
+-- Create new Dir/File
+vim.keymap.set('n', '<leader>nf', function()
+    local filename = vim.fn.input('New File: ')
+    if filename ~= '' then
+        vim.cmd('edit' .. filename)
+    end
+end, { desc = 'Create new file' })
+vim.keymap.set('n', '<leader>nd', function()
+    local dirname = vim.fn.input('New directory: ')
+    if dirname ~= '' then
+        vim.fn.mkdir(dirname, 'p')
+        vim.cmd('edit' .. dirname)
+    end
+end, { desc = 'Create new directory' })
+vim.keymap.set('n', '<leader>n', function()
+    local filename = vim.fn.input('New file in current dir: ')
+    if filename ~= '' then
+        local current_dir = vim.fn.expand('%:p:h')
+        vim.cmd('edit' .. current_dir .. '/' .. filename)
+    end
+end, { desc = 'Create new file in current directory' })
