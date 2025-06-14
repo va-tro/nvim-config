@@ -13,11 +13,8 @@ vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua lsp_document_symbols<cr>", { desc
 vim.keymap.set("n", "<leader>fd", "<cmd>FzfLua diagnostics_document<cr>", { desc = "Document Diagnostics" })
 vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua diagnostics_workspace<cr>", { desc = "Workspace Diagnostics" })
 
--- Clipboard history
-vim.keymap.set('n', '<leader>y', '<cmd>FzfLua neoclip<cr>', { desc = 'Open clipboard history' })
-vim.keymap.set('n', '<leader>Y', '<cmd>FzfLua neoclip plus<cr>', { desc = 'Open clipboard history (plus)' })
-
 -- Harpoon
+local harpoon = require("harpoon")
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 

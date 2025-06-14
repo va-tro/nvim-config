@@ -6,6 +6,8 @@ return {
             { "williamboman/mason.nvim", config = true },
             "williamboman/mason-lspconfig.nvim",
             { "j-hui/fidget.nvim",       config = true }, -- LSP status updates
+            'neovim/nvim-lspconfig',
+            { 'saghen/blink.cmp' },
         },
         config = function()
             -- Setup mason first
