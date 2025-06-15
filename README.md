@@ -1,8 +1,7 @@
-# YOHOHOHO! My Neovim Configuration! 🎵
 
 *"May I see your ..? YOHOHOHO!"*
 
-## 🎼
+
 - **Plugin Manager**:       [lazy.nvim](https://github.com/folke/lazy.nvim)
 - **Theme**:                [Catppuccin](https://github.com/catppuccin/nvim)
 - **Completion**:           [blink.cmp](https://github.com/saghen/blink.cmp)
@@ -28,32 +27,3 @@
 │       └── ...
 └── lazy-lock.json
 ```
-
-## 🎸 Key Mappings
-### General Moves
-- `<leader>`
-- `<leader>ff`
-- `<leader>fg`
-- `<leader>fb`
-- `<leader>fh`
-### Harpoon
-- `<leader>a`
-- `<leader>e`
-- `<leader>h`
-- `<C-h>` - Jump to file 1
-- `<C-j>` - Jump to file 2
-- `<C-k>` - Jump to file 3
-- `<C-l>` - Jump to file 4
-### LSP 
-- `gd`
-- `gr`
-- `K`
-- `[d`
-- `]d`
-
-## Requirements
-- Neovim 0.11.0 or higher
-- Git
-- A Nerd Font
-- Node.js
-- Python
